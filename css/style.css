@@ -137,7 +137,7 @@ body,
   height: 100%;
 }
 body {
-  font-family: "微软雅黑", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "΢���ź�", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   background: #fff;
   color: rgba(0,0,0,0.6);
@@ -968,6 +968,7 @@ a {
   line-height: 1.8em;
   padding-right: 30px;
   padding-left: 30px;
+  overflow: hidden;
 }
 .article-entry p {
   margin-top: 10px;
@@ -2289,6 +2290,7 @@ pre .css ~ * .id {
   height: 100%;
   overflow: hidden;
 }
+/*@import "_custom/main"*/
 .search {
   padding: 1em 0 0 2.5em;
 }
