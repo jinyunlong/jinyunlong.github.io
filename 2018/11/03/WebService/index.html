@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/img/WebService_success.bmp">
 <meta property="og:image" content="http://yoursite.com/img/命令窗口生成相关类.bmp">
 <meta property="og:image" content="http://yoursite.com/img/执行命令生成的类信息.bmp">
-<meta property="og:updated_time" content="2018-11-03T09:37:48.602Z">
+<meta property="og:updated_time" content="2018-11-04T02:18:53.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebService">
 <meta name="twitter:description" content="WebService到底是什么？Web Service也叫XML Web Service。WebService是一种可以接收从Internet或者Intranet上的其它系统中传递过来的请求，轻量级的独立的通讯技术。">
@@ -193,7 +193,7 @@ var _hmt = _hmt || [];
 <p>SOAP协议 = HTTP协议 + XML数据格式</p>
 <p>打个比喻：<br>HTTP就是普通公路，XML就是中间的绿色隔离带和两边的防护栏，SOAP就是普通公路经过加隔离带和防护栏改造过的高速公路。</p>
 <h3 id="WebService开发："><a href="#WebService开发：" class="headerlink" title="WebService开发："></a>WebService开发：</h3><p>Java方面的典型WebService框架包括：axis，xfire，cxf等，java ee服务器通常也支持发布WebService服务，例如JBoss。</p>
-<h3 id="java开发webservice的几种方式"><a href="#java开发webservice的几种方式" class="headerlink" title="java开发webservice的几种方式"></a>java开发webservice的几种方式</h3><p>1.Axis2<br>2.Apche CXF<br>3.JDK开发webservice<br>详情请访问以下地址<br><a href="http://blog.sina.com.cn/s/blog_a0e7e34c0101959p.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_a0e7e34c0101959p.html</a></p>
+<h3 id="java开发webservice的几种方式"><a href="#java开发webservice的几种方式" class="headerlink" title="java开发webservice的几种方式"></a>java开发webservice的几种方式</h3><p>1.Axis2<br>2.Apche CXF<br>3.JDK开发webservice<br><a href="http://blog.sina.com.cn/s/blog_a0e7e34c0101959p.html" target="_blank" rel="noopener">详情请点击此处</a></p>
 <h3 id="下面是一个简单的例子："><a href="#下面是一个简单的例子：" class="headerlink" title="下面是一个简单的例子："></a>下面是一个简单的例子：</h3><p>写在前面的话:<br>当两个人碰面后,产生了好感,如果需要得到双方的信息,那么双方的交流是必不可少的!应用程序也如此,<br>各个应用程序之间的交流就需要WebService来作为相互交流的桥梁!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(1)新建WebService服务端，并编写相应的方法，以供客户端调用，此处为getName()方法</span><br><span class="line">(2)编写main方法，发布WebService服务</span><br><span class="line">(3)浏览器访问地址(这里是http://localhost:9001/Service/Function?wsdl)，确定WebService服务发布成功</span><br><span class="line">(4)命令窗口，执行命令，生成相关类</span><br><span class="line">(5)编写客户端测试类，调用服务端方法</span><br></pre></td></tr></table></figure></p>
 <h2 id="1-、新建WebService服务端-2-、编写main方法，发布WebService服务"><a href="#1-、新建WebService服务端-2-、编写main方法，发布WebService服务" class="headerlink" title="(1)、新建WebService服务端 (2)、编写main方法，发布WebService服务"></a>(1)、新建WebService服务端 (2)、编写main方法，发布WebService服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">package WebService;</span><br><span class="line"></span><br><span class="line">import javax.jws.WebService;</span><br><span class="line">import javax.xml.ws.Endpoint;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by <span class="variable">$&#123;jinyunlong&#125;</span> on 2016/3/28.</span><br><span class="line"> */</span><br><span class="line">@WebService</span><br><span class="line">public class Function &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 该方法就是要暴露给其他应用程序调用的方法</span><br><span class="line">     * 供客户端调用的方法</span><br><span class="line">     * @param name 传入参数</span><br><span class="line">     * @<span class="built_in">return</span> String 返回结果</span><br><span class="line">     */</span><br><span class="line">    public String getName(String name)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> <span class="string">"My name is "</span>+name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        /**</span><br><span class="line">         * ↓↓ 第一句很重要，用于发布服务端localhost为地址指向地址</span><br><span class="line">         * ↓↓ 9001为任意端口，但必须未被占用</span><br><span class="line">         * ↓↓ 第二个参数new的为本类的类名</span><br><span class="line">         * 运行main方法相当于发布WebService服务</span><br><span class="line">         */</span><br><span class="line">        Endpoint.publish(<span class="string">"http://localhost:9001/Service/Function"</span>,new Function());</span><br><span class="line">        System.out.println(<span class="string">"Publish Success~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3-浏览器访问地址-这里是-http-localhost-9001-Service-Function-wsdl-，确定WebService服务发布成功"><a href="#3-浏览器访问地址-这里是-http-localhost-9001-Service-Function-wsdl-，确定WebService服务发布成功" class="headerlink" title="(3)浏览器访问地址(这里是 http://localhost:9001/Service/Function?wsdl ) ，确定WebService服务发布成功"></a>(3)浏览器访问地址(这里是 <a href="http://localhost:9001/Service/Function?wsdl" target="_blank" rel="noopener">http://localhost:9001/Service/Function?wsdl</a> ) ，确定WebService服务发布成功</h2><p> WebService服务发布成功的截图：<br><img src="/img/WebService_success.bmp" alt="img"></p>
@@ -454,15 +454,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">properties</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">歌词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">properties</a>
               </li>
             
             <div class="clearfix"></div>
