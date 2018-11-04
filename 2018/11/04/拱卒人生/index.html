@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>oracle的那些事 | Paul&#39;s blog</title>
+  <title>拱卒人生 | Paul&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录平时经常用到的oracle数据库操作以及sql语句。">
-<meta name="keywords" content="oracle">
+  <meta name="description" content="人生一步棋多少梦走出迷局我是那颗小卒子也想了不起人生悲喜剧命运和现实下棋哪怕是无声无息也要拼力气拱卒人生赢一片天地朝朝夕夕步步向前去楚河汉界一马平地平凡人生也有英雄豪气拱卒人生赢一片天地风风雨雨从没有放弃车马象仕和我一起同一个梦才有一盘好棋">
+<meta name="keywords" content="随笔,歌词">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oracle的那些事">
-<meta property="og:url" content="http://yoursite.com/2018/11/03/oracle的那些事/index.html">
+<meta property="og:title" content="拱卒人生">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/拱卒人生/index.html">
 <meta property="og:site_name" content="Paul&#39;s blog">
-<meta property="og:description" content="记录平时经常用到的oracle数据库操作以及sql语句。">
+<meta property="og:description" content="人生一步棋多少梦走出迷局我是那颗小卒子也想了不起人生悲喜剧命运和现实下棋哪怕是无声无息也要拼力气拱卒人生赢一片天地朝朝夕夕步步向前去楚河汉界一马平地平凡人生也有英雄豪气拱卒人生赢一片天地风风雨雨从没有放弃车马象仕和我一起同一个梦才有一盘好棋">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-03T07:47:45.993Z">
+<meta property="og:updated_time" content="2018-11-04T10:27:59.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oracle的那些事">
-<meta name="twitter:description" content="记录平时经常用到的oracle数据库操作以及sql语句。">
+<meta name="twitter:title" content="拱卒人生">
+<meta name="twitter:description" content="人生一步棋多少梦走出迷局我是那颗小卒子也想了不起人生悲喜剧命运和现实下棋哪怕是无声无息也要拼力气拱卒人生赢一片天地朝朝夕夕步步向前去楚河汉界一马平地平凡人生也有英雄豪气拱卒人生赢一片天地风风雨雨从没有放弃车马象仕和我一起同一个梦才有一盘好棋">
   
     <link rel="alternative" href="/atom.xml" title="Paul&#39;s blog" type="application/atom+xml">
   
@@ -162,36 +162,28 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-oracle的那些事" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-拱卒人生" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      oracle的那些事
+      拱卒人生
     </h1>
   
 
         
-        <a href="/2018/11/03/oracle的那些事/" class="archive-article-date">
-  	<time datetime="2018-11-03T07:02:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+        <a href="/2018/11/04/拱卒人生/" class="archive-article-date">
+  	<time datetime="2018-11-04T10:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>记录平时经常用到的oracle数据库操作以及sql语句。</p>
- <a id="more"></a>
-<h3 id="1-oracle视图操作"><a href="#1-oracle视图操作" class="headerlink" title="1.oracle视图操作"></a>1.oracle视图操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">创建视图：create view 视图名称 as 查询数据;</span><br><span class="line">    删除视图：drop view 视图名称;</span><br><span class="line"></span><br><span class="line">    例：</span><br><span class="line">        create view myview as select * from test_person;(可以修改视图，修改的数据会影响到基表)</span><br><span class="line">        create view myview as select * from test_person with <span class="built_in">read</span> only;(不可修改视图)</span><br><span class="line">        update myview <span class="built_in">set</span> age=<span class="string">'32'</span> <span class="built_in">where</span> id = <span class="string">'1'</span>;</span><br><span class="line">        drop view myview;</span><br><span class="line">    注：视图和数据库中的表一样 ，可以执行select、insert、update、delete等语句</span><br></pre></td></tr></table></figure>
-<h3 id="2-oracle主从数据库"><a href="#2-oracle主从数据库" class="headerlink" title="2.oracle主从数据库"></a>2.oracle主从数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">主从数据库的建立一般基于以下三个方面考虑：</span><br><span class="line">        1、容灾：备库在异地，主库不存在了，备库可以立即接管，无须恢复时间</span><br><span class="line">        2、负载均衡：主库做增删改，备库做查询，这样很多查询业务不占用主库资源</span><br><span class="line">        3、数据集中和分发：此种模式主要用于数据从分公司集中到总公司，或从总公司分发到分公司，前提是公司需要同步的数据</span><br><span class="line">           很少，另外各公司间业务系统不是同一家公司开发的同步功能主要通过数据库同步软件实现的.</span><br></pre></td></tr></table></figure>
-<h3 id="3-oracle表回滚到一个指定时间的操作语句"><a href="#3-oracle表回滚到一个指定时间的操作语句" class="headerlink" title="3.oracle表回滚到一个指定时间的操作语句"></a>3.oracle表回滚到一个指定时间的操作语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 <span class="built_in">enable</span> row movement;</span><br><span class="line">flashback table 表名 to timestamp to_timestamp(<span class="string">'2011-03-04 05:00:00'</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="4-增加数据库表列sql"><a href="#4-增加数据库表列sql" class="headerlink" title="4.增加数据库表列sql"></a>4.增加数据库表列sql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alter table table_name add(column_name 类型);</span><br><span class="line">alter table table_name add(column_name 类型);</span><br><span class="line">ex：</span><br><span class="line">  alter table e_Rpt_Iq_Teamperform add(psnnumzaizhihege <span class="built_in">integer</span>);</span><br><span class="line">  alter table e_Rpt_Iq_Teamperform add(psnnumzaizhihejiyou <span class="built_in">integer</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="5-修改列名sql"><a href="#5-修改列名sql" class="headerlink" title="5.修改列名sql"></a>5.修改列名sql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式：alter table &lt;table_name&gt;  rename column &lt;column_old_name&gt; to &lt;column_new_name&gt;;</span><br><span class="line">  ex：alter table e_Rpt_Iq_Teamperform  rename column psnnumzaizhihejiyou to psnnumzaizhijiyou;</span><br></pre></td></tr></table></figure>
-<h3 id="6-Oracle查询被锁的表的信息"><a href="#6-Oracle查询被锁的表的信息" class="headerlink" title="6.Oracle查询被锁的表的信息"></a>6.Oracle查询被锁的表的信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select object_name, machine, s.sid, s.serial<span class="comment">#</span></span><br><span class="line">    from gv<span class="variable">$locked_object</span> l, dba_objects o, gv<span class="variable">$session</span> s</span><br><span class="line">   <span class="built_in">where</span> l.object_id　 = o.object_id</span><br><span class="line">     and l.session_id = s.sid;</span><br><span class="line"></span><br><span class="line">  查看是哪个session引起的</span><br><span class="line">  select b.username,b.sid,b.serial<span class="comment">#,logon_time</span></span><br><span class="line">  from v<span class="variable">$locked_object</span> a,v<span class="variable">$session</span> b</span><br><span class="line">  <span class="built_in">where</span> a.session_id = b.sid order by b.logon_time;</span><br><span class="line"></span><br><span class="line">  杀掉这个进程</span><br><span class="line">  alter system <span class="built_in">kill</span> session <span class="string">'sid,serial#'</span>;(<span class="comment">#sid和serial#是从上面的那个sql中查询出来的)</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-修改数据库表列名"><a href="#7-修改数据库表列名" class="headerlink" title="7.修改数据库表列名"></a>7.修改数据库表列名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table (table_name)  rename column (column_old_name) to (column_new_name);</span><br></pre></td></tr></table></figure>
-<h3 id="8-oracle小数点前0不显示问题"><a href="#8-oracle小数点前0不显示问题" class="headerlink" title="8.oracle小数点前0不显示问题"></a>8.oracle小数点前0不显示问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select to_char(0.1,<span class="string">'fm9999990.9999'</span>) from dual;</span><br></pre></td></tr></table></figure>
+        <p>人生一步棋<br>多少梦走出迷局<br>我是那颗小卒子<br>也想了不起<br>人生悲喜剧<br>命运和现实下棋<br>哪怕是无声无息<br>也要拼力气<br>拱卒人生<br>赢一片天地<br>朝朝夕夕步步向前去<br>楚河汉界一马平地<br>平凡人生也有英雄豪气<br>拱卒人生<br>赢一片天地<br>风风雨雨从没有放弃<br>车马象仕和我一起<br>同一个梦才有一盘好棋</p>
+
       
 
       
@@ -235,7 +227,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">歌词</a>
         		</li>
       		
 		</ul>
@@ -291,7 +287,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/03/oracle的那些事/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/拱卒人生/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +301,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/11/03/WebService/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          WebService
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/03/读取properties/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">读取properties</div>
+    <a href="/2018/11/03/WebService/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">WebService</div>
       <i class="icon-circle-right"></i>
     </a>
   
