@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/11 | Paul&#39;s blog</title>
+  <title>Git基本概念与核心命令掌握 | Paul&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Paul&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+  <meta name="description" content="一、git体系概述git和svn有什么区别？git 与 svn主要区别：·存储方式不一样·使用方式不一样·管理模式不一样 1、存储方式不一样git把内容按元数据方式存储类型k//v数据库，而svn是按文件（新版svn已改成元数据存储） git hash-object -w README.MF #将README.MF文件提交到暂存区git cat-file -p  #查看内容 2、使用方式区别从本地">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基本概念与核心命令掌握">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/Git基本概念与核心命令掌握/index.html">
 <meta property="og:site_name" content="Paul&#39;s blog">
+<meta property="og:description" content="一、git体系概述git和svn有什么区别？git 与 svn主要区别：·存储方式不一样·使用方式不一样·管理模式不一样 1、存储方式不一样git把内容按元数据方式存储类型k//v数据库，而svn是按文件（新版svn已改成元数据存储） git hash-object -w README.MF #将README.MF文件提交到暂存区git cat-file -p  #查看内容 2、使用方式区别从本地">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/svn.png">
+<meta property="og:image" content="http://yoursite.com/img/git.png">
+<meta property="og:image" content="http://yoursite.com/img/集中式.png">
+<meta property="og:image" content="http://yoursite.com/img/分布式.png">
+<meta property="og:image" content="http://yoursite.com/img/git_tree.png">
+<meta property="og:image" content="http://yoursite.com/img/git_tree1.png">
+<meta property="og:image" content="http://yoursite.com/img/git_tree2.png">
+<meta property="og:image" content="http://yoursite.com/img/git_tree3.png">
+<meta property="og:image" content="http://yoursite.com/img/git_tree4.png">
+<meta property="og:updated_time" content="2018-11-05T13:02:20.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Paul&#39;s blog">
+<meta name="twitter:title" content="Git基本概念与核心命令掌握">
+<meta name="twitter:description" content="一、git体系概述git和svn有什么区别？git 与 svn主要区别：·存储方式不一样·使用方式不一样·管理模式不一样 1、存储方式不一样git把内容按元数据方式存储类型k//v数据库，而svn是按文件（新版svn已改成元数据存储） git hash-object -w README.MF #将README.MF文件提交到暂存区git cat-file -p  #查看内容 2、使用方式区别从本地">
+<meta name="twitter:image" content="http://yoursite.com/img/svn.png">
   
     <link rel="alternative" href="/atom.xml" title="Paul&#39;s blog" type="application/atom+xml">
   
@@ -157,36 +172,117 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Git基本概念与核心命令掌握" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/05/Git基本概念与核心命令掌握/" class="archive-article-date">
-  	<time datetime="2018-11-05T12:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/Git基本概念与核心命令掌握/">Git基本概念与核心命令掌握</a>
+    <h1 class="article-title" itemprop="name">
+      Git基本概念与核心命令掌握
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/11/05/Git基本概念与核心命令掌握/" class="archive-article-date">
+  	<time datetime="2018-11-05T12:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、git体系概述"><a href="#一、git体系概述" class="headerlink" title="一、git体系概述"></a>一、git体系概述</h3><p>git和svn有什么区别？<br>git 与 svn主要区别：<br>·存储方式不一样<br>·使用方式不一样<br>·管理模式不一样</p>
+<p>1、存储方式不一样<br>git把内容按元数据方式存储类型k//v数据库，而svn是按文件（新版svn已改成元数据存储）</p>
+<p>git hash-object -w README.MF #将README.MF文件提交到暂存区<br>git cat-file -p <commonitid> #查看内容</commonitid></p>
+<p>2、使用方式区别<br>从本地把文件推送远程服务，svn只需要commint，而git 需要add，commint, push 三个步骤<br>svn基本使用过程<br><img src="/img/svn.png" alt="img"></p>
+<p>git基本使用过程<br><img src="/img/git.png" alt="img"></p>
+<p>3、版本管理模式区别<br>git是一个分布式版本管理系统，而svn是一个远程集中式管理系统<br>集中式<br><img src="/img/集中式.png" alt="img"></p>
+<p>分布式<br><img src="/img/分布式.png" alt="img"></p>
+<h3 id="二、git核心命令使用"><a href="#二、git核心命令使用" class="headerlink" title="二、git核心命令使用"></a>二、git核心命令使用</h3><p>1、git客户端安装配置<br>官方客户端： httpsd://git-scm.com/downloads<br>其它客户端：<a href="https://tortoisegit.org/download/" target="_blank" rel="noopener">https://tortoisegit.org/download/</a></p>
+<p>2、本地初始化GIT 仓库</p>
+<p>git clone &lt;remote_url&gt; #基于远程仓库克隆至本地<br>git init  <directory> #当前目录初始化为git 本地仓库<br>mvn archetype:generate #基于mvn 模板创建项目</directory></p>
+<p>本地添加<br>git add <filename> #添加指定文件至暂存区<br>git add <directory> #添加指定目录至暂存区<br>git add -A #添加所有<br>git rm –cached target -r #将指定目录及子目录移除出暂存区</directory></filename></p>
+<p>#添加忽略配置文件 .gitignore<br>本地提交<br>git commit file -m ‘提交评论’ #提交至本地仓库<br>git commit -am ‘快添加与提交’ #快捷提交至本地仓库</p>
+<p>3、分支管理</p>
+<p>git branch [-avv] #查看当前分支<br>git branch <branch name=""> #基于当前分支新建分支<br>git branch <branch name=""> <commit id=""> #基于提交新建分支<br>git branch -d {dev} #删除分支<br>git checkout <branch name=""> #切换分支<br>git merge <merge target=""> #合并分支</merge></branch></commit></branch></branch></p>
+<p>#解决冲突，如果因冲突导致自动合并失败，此时 status 为mergeing 状态.</p>
+<p>#需要手动修改后重新提交（commit） </p>
+<p>4、远程仓库管理</p>
+<p>git remote [-v] #查看远程配置<br>git remote add origin http:xxx.xxx #添加远程地址<br>git remote remove origin  #删除远程地址<br>git push –set-upstream origin master  #上传新分支至远程<br>git branch –track –set-upstream-to=origin/test test #将本地分支与远程建立关联</p>
+<p>5、tag管理</p>
+<p>git tag #查看当前<br>git tag <tag name=""> <branch name=""> #创建分支<br>git tag -d <tag name=""> #删除分支</tag></branch></tag></p>
+<p>6、日志管理</p>
+<p>git log #查看当前分支下所有提交日志<br>git log {branch} #查看当前分支下所有提交日志<br>git log –oneline # 单行显示日志<br>git log master..experiment # 比较两个版本的区别<br>git log –pretty=format:’%h %s’ –graph #以图表的方式显示提交合并网络</p>
+<h3 id="三、git底层原理"><a href="#三、git底层原理" class="headerlink" title="三、git底层原理"></a>三、git底层原理</h3><p>1、GIT存储对像(hashMap)<br>Git 是一个内容寻址文件系统，其核心部分是一个简单的键值对数据库（key-value data store），你可以向数据库中插入任意内容，它会返回一个用于取回该值的hash 键。</p>
+<h1 id="git-键值库中插入数据"><a href="#git-键值库中插入数据" class="headerlink" title="git 键值库中插入数据"></a>git 键值库中插入数据</h1><p>echo ‘luban is good man’ | git hash-object -w –stdin<br>79362d07cf264f8078b489a47132afbc73f87b9a</p>
+<p>#基于键获取指定内容<br>git cat-file -p 79362d07cf264f8078b489a47132afbc73f87b9a<br>Git基于该功能 把每个文件的版本中内容都保存在数据库中，当要进行版本回滚的时候就通过其中一个键将期取回并替换。</p>
+<p>l  模拟演示git 版写入与回滚过程</p>
+<h1 id="查找所有的git-对像"><a href="#查找所有的git-对像" class="headerlink" title="查找所有的git 对像"></a>查找所有的git 对像</h1><p>  find .git/objects/ -type f</p>
+<h1 id="写入版本1"><a href="#写入版本1" class="headerlink" title="写入版本1"></a>写入版本1</h1><p>echo ‘version1’ &gt; README.MF; git hash-object -w README.MF;</p>
+<h1 id="写入版本2"><a href="#写入版本2" class="headerlink" title="写入版本2"></a>写入版本2</h1><p>echo ‘version2’ &gt; README.MF; git hash-object -w README.MF;</p>
+<h1 id="写入版本3"><a href="#写入版本3" class="headerlink" title="写入版本3"></a>写入版本3</h1><p>echo ‘version3’ &gt; README.MF; git hash-object -w README.MF;</p>
+<h1 id="回滚指定版本"><a href="#回滚指定版本" class="headerlink" title="回滚指定版本"></a>回滚指定版本</h1><p>git cat-file -p c11e96db44f7f3bc4c608aa7d7cd9ba4ab25066e &gt; README.MF</p>
+<p>所以我们平常用的 git add 其实就是把修改之后的内容 插入到键值库中。当我们执行 git add README.MF 等同于执行了 git hash-object -w README.MF 把文件写到数据库中。</p>
+<p>我们解决了存储的问题，但其只能存储内容同并没有存储文件名，如果要进行回滚 怎么知道哪个内容对应哪个文件呢？接下要讲的就是树对象，它解决了文件名存储的问题 。<br>2、GIT树对像<br>树对像解决了文件名的问题，它的目的将多个文件名组织在一起，其内包含多个文件名称与其对应的Key和其它树对像的用引用，可以理解成操作系统当中的文件夹，一个文件夹包含多个文件和多个其它文件夹。</p>
+<p><img src="/img/git_tree.png" alt="img"></p>
+<p>每一个分支当中都关联了一个树对像，他存储了当前分支下所有的文件名及对应的 key.<br>通过以下命令即可查看</p>
+<p>#查看分支树<br> git cat-file -p master^{tree}</p>
+<p>3、git提交对象</p>
+<p>一次提交即为当前版本的一个快照，该快照就是通过提交对像保存，其存储的内容为：一个顶级树对象、上一次提交的对像啥希、提交者用户名及邮箱、提交时间戳、提交评论。</p>
+<p>$ git cat-file -p b2395925b5f1c12bf8cb9602f05fc8d580311836<br>tree 002adb8152f7cd49f400a0480ef2d4c09b060c07<br>parent 8be903f5e1046b851117a21cdc3c80bdcaf97570<br>author tommy <a href="mailto:&#x74;&#111;&#109;&#x6d;&#x79;&#64;&#x74;&#117;&#x6c;&#x69;&#x6e;&#x67;&#x2e;&#x63;&#x6f;&#x6d;" target="_blank" rel="noopener">&#x74;&#111;&#109;&#x6d;&#x79;&#64;&#x74;&#117;&#x6c;&#x69;&#x6e;&#x67;&#x2e;&#x63;&#x6f;&#x6d;</a> 1532959457 +0800<br>committer tommy <a href="mailto:&#x74;&#x6f;&#x6d;&#x6d;&#121;&#64;&#x74;&#x75;&#108;&#105;&#110;&#x67;&#46;&#x63;&#x6f;&#x6d;" target="_blank" rel="noopener">&#x74;&#x6f;&#x6d;&#x6d;&#121;&#64;&#x74;&#x75;&#108;&#105;&#110;&#x67;&#46;&#x63;&#x6f;&#x6d;</a> 1532959457 +0800</p>
+<p>通过上面的知识，我们可以推测出从修改一个文件到提交的过程总共生成了三个对像：<br>一个内容对象 ==&gt; 存储了文件内容<br>一个树对像 ==&gt; 存储了文件名及内容对像的key<br>一个提交对像 ==&gt; 存储了树对像的key 及提交评论。</p>
+<p>4、git引用</p>
+<p>当我们执行 git branch {branchName} 时创建了一个分支，其本质就是在git 基于指定提交创建了一个引用文件，保存在 .git\refs\heads\ 下。<br>l  演示分支的创建<br> git branch dev<br> cat.git\refs\heads\dev<br>git 总共 有三种类型的引用：</p>
+<ol>
+<li>分支引用</li>
+<li>远程分支引用</li>
+<li>标签引用</li>
+</ol>
+<p>git log master..experiment #查询比较两个版本<br>git log –pretty=format:’%h %s’ –graph #版本提交历史网络<br>git cat-file -p master^{tree} #查看分支树</p>
+<p>查看树<br><img src="/img/git_tree1.png" alt="img"></p>
+<p>新的提交，父级目录都会变<br><img src="/img/git_tree2.png" alt="img"></p>
+<p><img src="/img/git_tree3.png" alt="img"></p>
+<p><img src="/img/git_tree4.png" alt="img"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.JPG">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.JPG">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,259 +294,106 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/05/Git基本概念与核心命令掌握/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/05/从linux到zookeeper/" class="archive-article-date">
-  	<time datetime="2018-11-05T12:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/05/从linux到zookeeper/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从linux到zookeeper</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/从linux到zookeeper/">从linux到zookeeper</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">zookeeper</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/拱卒人生/" class="archive-article-date">
-  	<time datetime="2018-11-04T10:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/拱卒人生/">拱卒人生</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">歌词</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/03/WebService/" class="archive-article-date">
-  	<time datetime="2018-11-03T07:12:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/03/WebService/">WebService</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WebService</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/03/oracle的那些事/" class="archive-article-date">
-  	<time datetime="2018-11-03T07:02:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/03/oracle的那些事/">oracle的那些事</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/03/读取properties/" class="archive-article-date">
-  	<time datetime="2018-11-03T06:52:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/03/读取properties/">读取properties</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">properties</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/03/身边的爱恋/" class="archive-article-date">
-  	<time datetime="2018-11-03T06:38:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/03/身边的爱恋/">身边的爱恋</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">歌词</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -476,8 +419,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
