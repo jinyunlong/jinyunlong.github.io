@@ -179,9 +179,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。<br>如有疑问之处，可私信我。<br>一、下载CentOS7镜像<br>　　网址：<a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" target="_blank" rel="noopener">http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso</a><br>二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统<br>三、使用root用户登录linux系统<br>四、永久关闭linux防火墙<br>CentOS 7.0默认使用的是firewall作为防火墙，从centos7开始使用systemctl来管理服务和程序，包括了service和chkconfig。<br>查看<br>firewall-cmd –state #查看默认防火墙状态（关闭后显示notrunning，开启后显示running)<br>systemctl list-unit-files|grep firewalld.service #查看防火墙的状态（disabled 关闭 enabled 启动）<br>关闭<br>systemctl stop firewalld.service #停止firewall<br>systemctl disable firewalld.service #禁止firewall开机启动</p>
-<p>截图如下：</p>
-
+        <p>写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。<br>如有疑问之处，可私信我。</p>
+        
+          <a class="article-more-a" href="/2018/11/05/从linux到zookeeper/#more">more >></a>
+        
       
 
       
@@ -698,15 +699,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">properties</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,7 +719,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color1">properties</a>
               </li>
             
             <div class="clearfix"></div>

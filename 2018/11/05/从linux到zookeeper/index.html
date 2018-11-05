@@ -8,18 +8,31 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>从linux到zookeeper | Paul&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。如有疑问之处，可私信我。一、下载CentOS7镜像　　网址：http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统三">
+  <meta name="description" content="写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。如有疑问之处，可私信我。">
 <meta name="keywords" content="linux,zookeeper">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从linux到zookeeper">
 <meta property="og:url" content="http://yoursite.com/2018/11/05/从linux到zookeeper/index.html">
 <meta property="og:site_name" content="Paul&#39;s blog">
-<meta property="og:description" content="写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。如有疑问之处，可私信我。一、下载CentOS7镜像　　网址：http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统三">
+<meta property="og:description" content="写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。如有疑问之处，可私信我。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-05T12:08:01.513Z">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-1.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-2.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-3.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-4.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-5.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-6.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-7.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-8.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-9.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-10.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-11.png">
+<meta property="og:image" content="http://yoursite.com/img/linux-zookeeper-12.png">
+<meta property="og:updated_time" content="2018-11-05T12:45:59.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从linux到zookeeper">
-<meta name="twitter:description" content="写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。如有疑问之处，可私信我。一、下载CentOS7镜像　　网址：http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统三">
+<meta name="twitter:description" content="写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。如有疑问之处，可私信我。">
+<meta name="twitter:image" content="http://yoursite.com/img/linux-zookeeper-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Paul&#39;s blog" type="application/atom+xml">
   
@@ -182,8 +195,32 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。<br>如有疑问之处，可私信我。<br>一、下载CentOS7镜像<br>　　网址：<a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" target="_blank" rel="noopener">http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso</a><br>二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统<br>三、使用root用户登录linux系统<br>四、永久关闭linux防火墙<br>CentOS 7.0默认使用的是firewall作为防火墙，从centos7开始使用systemctl来管理服务和程序，包括了service和chkconfig。<br>查看<br>firewall-cmd –state #查看默认防火墙状态（关闭后显示notrunning，开启后显示running)<br>systemctl list-unit-files|grep firewalld.service #查看防火墙的状态（disabled 关闭 enabled 启动）<br>关闭<br>systemctl stop firewalld.service #停止firewall<br>systemctl disable firewalld.service #禁止firewall开机启动</p>
-<p>截图如下：</p>
+        <p>写这篇博文是想记录一下zookeeper部署在linux上的一个过程，期间也走了好多弯路，调试了好久，所以才有了这篇博文。<br>如有疑问之处，可私信我。</p>
+ <a id="more"></a>
+<h3 id="一、下载CentOS7镜像"><a href="#一、下载CentOS7镜像" class="headerlink" title="一、下载CentOS7镜像"></a>一、下载CentOS7镜像</h3><p><a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1804.iso" target="_blank" rel="noopener">click here</a></p>
+<h3 id="二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统"><a href="#二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统" class="headerlink" title="二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统"></a>二、将下载好的CentOS7镜像添加到虚拟机中，安装该系统</h3><h3 id="三、使用root用户登录linux系统"><a href="#三、使用root用户登录linux系统" class="headerlink" title="三、使用root用户登录linux系统"></a>三、使用root用户登录linux系统</h3><h3 id="四、永久关闭linux防火墙"><a href="#四、永久关闭linux防火墙" class="headerlink" title="四、永久关闭linux防火墙"></a>四、永久关闭linux防火墙</h3><p>CentOS 7.0默认使用的是firewall作为防火墙，从centos7开始使用systemctl来管理服务和程序，包括了service和chkconfig。</p>
+<p>查看</p>
+<p>#查看默认防火墙状态（关闭后显示notrunning，开启后显示running)<br>firewall-cmd –state</p>
+<p>#查看防火墙的状态（disabled: 关闭 enabled: 启动）<br>systemctl list-unit-files|grep firewalld.service  </p>
+<p>关闭</p>
+<p>#停止firewall<br>systemctl stop firewalld.service</p>
+<p>#禁止firewall开机启动<br>systemctl disable firewalld.service</p>
+<p>截图如下：<br><img src="/img/linux-zookeeper-1.png" alt="img"></p>
+<h3 id="五、卸载linux系统自带的java环境，配置新的java环境"><a href="#五、卸载linux系统自带的java环境，配置新的java环境" class="headerlink" title="五、卸载linux系统自带的java环境，配置新的java环境"></a>五、卸载linux系统自带的java环境，配置新的java环境</h3><p>1、卸载<br>   查询Linux系统自带的jdk：rpm -qa | grep jdk<br>   卸载系统自带的jdk：yum -y remove copy-jdk-configs-2.2-3.el7.noarch<br>2、配置永久java环境<br>   vi /etc/profile<br>   输入i<br>   加入内容如下：<br>   export JAVA_HOME=/usr/local/services/jdk/jdk-9.0.1<br>   export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>   export PATH=$JAVA_HOME/bin:$PATH<br>   加载刚设置的变量<br>   source /etc/profile<br>￼</p>
+<p> 截图如下：<br><img src="/img/linux-zookeeper-2.png" alt="img"></p>
+<p><img src="/img/linux-zookeeper-3.png" alt="img"></p>
+<h3 id="六、配置zookeeper"><a href="#六、配置zookeeper" class="headerlink" title="六、配置zookeeper"></a>六、配置zookeeper</h3><p>1、解压缩下载好的zookeeper压缩包：tar -zxvf zookeeper-3.4.9.tar.gz <br>2、进入目录zookeeper-3.4.9下的conf目录 <br>3、复制zoo_sample.cfg：cp zoo_sample.cfg zoo.cfg <br>4、修改zoo.cfg：vim zoo.cfg</p>
+<p><img src="/img/linux-zookeeper-4.png" alt="img"></p>
+<p>5、克隆上述配置好的linux系统(此处命名为CentOS1)：CentOS2、CentOS3 <br>6、克隆完成，查看CentOS1、CentOS2、CentOS3的ip地址：ifconfig ip结果：CentOS1：192.168.199.183、CentOS2：192.168.199.110、CentOS3：192.168.199.102</p>
+<p><img src="/img/linux-zookeeper-5.png" alt="img"></p>
+<p><img src="/img/linux-zookeeper-6.png" alt="img"></p>
+<p><img src="/img/linux-zookeeper-7.png" alt="img"></p>
+<p>7、分别修改这三个zookeeper的zoo.cfg，修改如下截图：<br><img src="/img/linux-zookeeper-8.png" alt="img"></p>
+<p>8、创建myid： 192.168.199.102：echo ‘1’&gt;myid 192.168.199.110：echo ‘2’&gt;myid 192.168.199.183：echo ‘3’&gt;myid <br>9、启动zookeeper(三个都需要启动) ./zkServer.sh start<br><img src="/img/linux-zookeeper-9.png" alt="img"></p>
+<p>10、查看运行状态(./zkServer.sh status) 192.168.199.102：<br><img src="/img/linux-zookeeper-10.png" alt="img"></p>
+<p>192.168.199.110：<br><img src="/img/linux-zookeeper-11.png" alt="img"></p>
+<p>192.168.199.183：<br><img src="/img/linux-zookeeper-12.png" alt="img"></p>
+<p>zookeeper配置成功</p>
 
       
 
@@ -437,15 +474,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">properties</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,7 +494,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color1">properties</a>
               </li>
             
             <div class="clearfix"></div>
