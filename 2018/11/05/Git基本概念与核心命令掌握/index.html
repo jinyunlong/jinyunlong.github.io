@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
 <p>#查看分支树<br> git cat-file -p master^{tree}</p>
 <p>3、git提交对象</p>
 <p>一次提交即为当前版本的一个快照，该快照就是通过提交对像保存，其存储的内容为：一个顶级树对象、上一次提交的对像啥希、提交者用户名及邮箱、提交时间戳、提交评论。</p>
-<p>$ git cat-file -p b2395925b5f1c12bf8cb9602f05fc8d580311836<br>tree 002adb8152f7cd49f400a0480ef2d4c09b060c07<br>parent 8be903f5e1046b851117a21cdc3c80bdcaf97570<br>author paul <a href="mailto:&#x70;&#97;&#117;&#108;&#64;&#49;&#x36;&#51;&#x2e;&#x63;&#x6f;&#x6d;" target="_blank" rel="noopener">&#x70;&#97;&#117;&#108;&#64;&#49;&#x36;&#51;&#x2e;&#x63;&#x6f;&#x6d;</a> 1532959457 +0800<br>committer paul <a href="mailto:&#112;&#97;&#x75;&#x6c;&#x40;&#49;&#54;&#51;&#46;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#112;&#97;&#x75;&#x6c;&#x40;&#49;&#54;&#51;&#46;&#x63;&#111;&#x6d;</a> 1532959457 +0800</p>
+<p>$ git cat-file -p b2395925b5f1c12bf8cb9602f05fc8d580311836<br>tree 002adb8152f7cd49f400a0480ef2d4c09b060c07<br>parent 8be903f5e1046b851117a21cdc3c80bdcaf97570<br>author paul <a href="mailto:&#112;&#97;&#x75;&#x6c;&#64;&#49;&#54;&#51;&#x2e;&#x63;&#111;&#109;" target="_blank" rel="noopener">&#112;&#97;&#x75;&#x6c;&#64;&#49;&#54;&#51;&#x2e;&#x63;&#111;&#109;</a> 1532959457 +0800<br>committer paul <a href="mailto:&#x70;&#97;&#117;&#x6c;&#x40;&#49;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#x6d;" target="_blank" rel="noopener">&#x70;&#97;&#117;&#x6c;&#x40;&#49;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#x6d;</a> 1532959457 +0800</p>
 <p>通过上面的知识，我们可以推测出从修改一个文件到提交的过程总共生成了三个对像：<br>一个内容对象 ==&gt; 存储了文件内容<br>一个树对像 ==&gt; 存储了文件名及内容对像的key<br>一个提交对像 ==&gt; 存储了树对像的key 及提交评论。</p>
 <p>4、git引用</p>
 <p>当我们执行 git branch {branchName} 时创建了一个分支，其本质就是在git 基于指定提交创建了一个引用文件，保存在 .git\refs\heads\ 下。<br>l  演示分支的创建<br> git branch dev<br> cat.git\refs\heads\dev<br>git 总共 有三种类型的引用：</p>
@@ -362,6 +362,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/06/17/字节码插桩技术/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          字节码插桩技术
+        
+      </div>
+    </a>
   
   
     <a href="/2018/11/05/从linux到zookeeper/" id="article-nav-older" class="article-nav-link-wrap">
@@ -498,11 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WebService</a>
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color1">WebService</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,6 +520,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javaagent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
               </li>
              
               <li class="article-tag-list-item">
