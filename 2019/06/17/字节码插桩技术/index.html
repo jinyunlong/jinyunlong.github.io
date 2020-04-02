@@ -9,7 +9,7 @@
   <title>字节码插桩技术 | Paul&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="字节码插桩我们知道JVM是不能直接执行.java 代码，也不能直接执行.class文件，它只能执行.class 文件中存储的指令码。这就是为什么class需要通过classLoader 装载以后才能运行。基于此机制可否在ClassLoader装载之前拦截修改class当中的内容(jvm 指令码）从而让程序中包含我们的埋点逻辑呢?答案是肯定的，但需要用到两个技术 javaagent与javassis">
-<meta name="keywords" content="javaagent,javassist">
+<meta name="keywords" content="java,javaagent,javassist">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字节码插桩技术">
 <meta property="og:url" content="http://yoursite.com/2019/06/17/字节码插桩技术/index.html">
@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://yoursite.com/img/javassist1.png">
 <meta property="og:image" content="http://yoursite.com/img/javassist2.png">
 <meta property="og:image" content="http://yoursite.com/img/javassist3.png">
-<meta property="og:updated_time" content="2019-06-17T14:15:46.325Z">
+<meta property="og:updated_time" content="2020-04-02T13:48:49.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字节码插桩技术">
 <meta name="twitter:description" content="字节码插桩我们知道JVM是不能直接执行.java 代码，也不能直接执行.class文件，它只能执行.class 文件中存储的指令码。这就是为什么class需要通过classLoader 装载以后才能运行。基于此机制可否在ClassLoader装载之前拦截修改class当中的内容(jvm 指令码）从而让程序中包含我们的埋点逻辑呢?答案是肯定的，但需要用到两个技术 javaagent与javassis">
@@ -253,6 +253,10 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">javaagent</a>
         		</li>
       		 
@@ -327,6 +331,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2020/04/02/java设计模式之单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java设计模式之单例模式
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/11/05/Git基本概念与核心命令掌握/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Git基本概念与核心命令掌握</div>
@@ -372,7 +385,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Paul
+    		&copy; 2020 Paul
     	</div>
       <div>
         <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275246189'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1275246189%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -466,15 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,6 +492,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">javassist</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
