@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>WebService | Paul&#39;s blog</title>
+  <title>Java设计模式之工厂模式 | Paul&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="WebService到底是什么？Web Service也叫XML Web Service。WebService是一种可以接收从Internet或者Intranet上的其它系统中传递过来的请求，轻量级的独立的通讯技术。">
-<meta name="keywords" content="WebService">
+  <meta name="description" content="工厂模式模式定义:定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使得一个类的实例化延迟到子类场景:1.当你不知道该使用对象的确切类型的时候2.当你希望为库或框架提供扩展其内部组件的方法时">
+<meta name="keywords" content="java,设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WebService">
-<meta property="og:url" content="http://yoursite.com/2018/11/03/WebService/index.html">
+<meta property="og:title" content="Java设计模式之工厂模式">
+<meta property="og:url" content="http://yoursite.com/2020/04/06/Java设计模式之工厂模式/index.html">
 <meta property="og:site_name" content="Paul&#39;s blog">
-<meta property="og:description" content="WebService到底是什么？Web Service也叫XML Web Service。WebService是一种可以接收从Internet或者Intranet上的其它系统中传递过来的请求，轻量级的独立的通讯技术。">
+<meta property="og:description" content="工厂模式模式定义:定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使得一个类的实例化延迟到子类场景:1.当你不知道该使用对象的确切类型的时候2.当你希望为库或框架提供扩展其内部组件的方法时">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/WebService_success.bmp">
-<meta property="og:image" content="http://yoursite.com/img/命令窗口生成相关类.bmp">
-<meta property="og:image" content="http://yoursite.com/img/执行命令生成的类信息.bmp">
-<meta property="og:updated_time" content="2018-11-04T02:18:53.574Z">
+<meta property="og:image" content="http://yoursite.com/img/java-designpattern-3.png">
+<meta property="og:updated_time" content="2020-04-06T13:45:37.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WebService">
-<meta name="twitter:description" content="WebService到底是什么？Web Service也叫XML Web Service。WebService是一种可以接收从Internet或者Intranet上的其它系统中传递过来的请求，轻量级的独立的通讯技术。">
-<meta name="twitter:image" content="http://yoursite.com/img/WebService_success.bmp">
+<meta name="twitter:title" content="Java设计模式之工厂模式">
+<meta name="twitter:description" content="工厂模式模式定义:定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使得一个类的实例化延迟到子类场景:1.当你不知道该使用对象的确切类型的时候2.当你希望为库或框架提供扩展其内部组件的方法时">
+<meta name="twitter:image" content="http://yoursite.com/img/java-designpattern-3.png">
   
     <link rel="alternative" href="/atom.xml" title="Paul&#39;s blog" type="application/atom+xml">
   
@@ -166,42 +164,33 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-WebService" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Java设计模式之工厂模式" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      WebService
+      Java设计模式之工厂模式
     </h1>
   
 
         
-        <a href="/2018/11/03/WebService/" class="archive-article-date">
-  	<time datetime="2018-11-03T07:12:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+        <a href="/2020/04/06/Java设计模式之工厂模式/" class="archive-article-date">
+  	<time datetime="2020-04-06T12:59:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="WebService到底是什么？"><a href="#WebService到底是什么？" class="headerlink" title="WebService到底是什么？"></a>WebService到底是什么？</h3><p>Web Service也叫XML Web Service。<br>WebService是一种可以接收从Internet或者Intranet上的其它系统中传递过来的请求，轻量级的独立的通讯技术。</p>
+        <h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>模式定义:<br>定义一个用于创建对象的接口，让子类决定实例化哪一个类。<br>Factory Method 使得一个类的实例化延迟到子类<br>场景:<br>1.当你不知道该使用对象的确切类型的时候<br>2.当你希望为库或框架提供扩展其内部组件的方法时</p>
  <a id="more"></a>
-<p>一言以蔽之：WebService是一种跨编程语言和跨操作系统平台的远程调用技术。<br>所谓跨编程语言和跨操作平台，就是说服务端程序采用java编写，客户端程序则可以采用其他编程语言编写，<br>反之亦然！跨操作系统平台则是指服务端程序和客户端程序可以在不同的操作系统上运行。</p>
-<h3 id="SOAP："><a href="#SOAP：" class="headerlink" title="SOAP："></a>SOAP：</h3><p>WebService通过HTTP协议发送请求和接收结果时，发送的请求内容和结果内容都采用XML格式封装，<br>并增加了一些特定的HTTP消息头，以说明HTTP消息的内容格式，这些特定的HTTP消息头和XML内容格式就是SOAP协议。<br>SOAP提供了标准的RPC(远程过程调用协议)方法来调用Web Service。</p>
-<p>SOAP协议 = HTTP协议 + XML数据格式</p>
-<p>打个比喻：<br>HTTP就是普通公路，XML就是中间的绿色隔离带和两边的防护栏，SOAP就是普通公路经过加隔离带和防护栏改造过的高速公路。</p>
-<h3 id="WebService开发："><a href="#WebService开发：" class="headerlink" title="WebService开发："></a>WebService开发：</h3><p>Java方面的典型WebService框架包括：axis，xfire，cxf等，java ee服务器通常也支持发布WebService服务，例如JBoss。</p>
-<h3 id="java开发webservice的几种方式"><a href="#java开发webservice的几种方式" class="headerlink" title="java开发webservice的几种方式"></a>java开发webservice的几种方式</h3><p>1.Axis2<br>2.Apche CXF<br>3.JDK开发webservice<br><a href="http://blog.sina.com.cn/s/blog_a0e7e34c0101959p.html" target="_blank" rel="noopener">详情请点击此处</a></p>
-<h3 id="下面是一个简单的例子："><a href="#下面是一个简单的例子：" class="headerlink" title="下面是一个简单的例子："></a>下面是一个简单的例子：</h3><p>写在前面的话:<br>当两个人碰面后,产生了好感,如果需要得到双方的信息,那么双方的交流是必不可少的!应用程序也如此,<br>各个应用程序之间的交流就需要WebService来作为相互交流的桥梁!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(1)新建WebService服务端，并编写相应的方法，以供客户端调用，此处为getName()方法</span><br><span class="line">(2)编写main方法，发布WebService服务</span><br><span class="line">(3)浏览器访问地址(这里是http://localhost:9001/Service/Function?wsdl)，确定WebService服务发布成功</span><br><span class="line">(4)命令窗口，执行命令，生成相关类</span><br><span class="line">(5)编写客户端测试类，调用服务端方法</span><br></pre></td></tr></table></figure></p>
-<h2 id="1-、新建WebService服务端-2-、编写main方法，发布WebService服务"><a href="#1-、新建WebService服务端-2-、编写main方法，发布WebService服务" class="headerlink" title="(1)、新建WebService服务端 (2)、编写main方法，发布WebService服务"></a>(1)、新建WebService服务端 (2)、编写main方法，发布WebService服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">package WebService;</span><br><span class="line"></span><br><span class="line">import javax.jws.WebService;</span><br><span class="line">import javax.xml.ws.Endpoint;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by <span class="variable">$&#123;jinyunlong&#125;</span> on 2016/3/28.</span><br><span class="line"> */</span><br><span class="line">@WebService</span><br><span class="line">public class Function &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 该方法就是要暴露给其他应用程序调用的方法</span><br><span class="line">     * 供客户端调用的方法</span><br><span class="line">     * @param name 传入参数</span><br><span class="line">     * @<span class="built_in">return</span> String 返回结果</span><br><span class="line">     */</span><br><span class="line">    public String getName(String name)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> <span class="string">"My name is "</span>+name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        /**</span><br><span class="line">         * ↓↓ 第一句很重要，用于发布服务端localhost为地址指向地址</span><br><span class="line">         * ↓↓ 9001为任意端口，但必须未被占用</span><br><span class="line">         * ↓↓ 第二个参数new的为本类的类名</span><br><span class="line">         * 运行main方法相当于发布WebService服务</span><br><span class="line">         */</span><br><span class="line">        Endpoint.publish(<span class="string">"http://localhost:9001/Service/Function"</span>,new Function());</span><br><span class="line">        System.out.println(<span class="string">"Publish Success~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-浏览器访问地址-这里是-http-localhost-9001-Service-Function-wsdl-，确定WebService服务发布成功"><a href="#3-浏览器访问地址-这里是-http-localhost-9001-Service-Function-wsdl-，确定WebService服务发布成功" class="headerlink" title="(3)浏览器访问地址(这里是 http://localhost:9001/Service/Function?wsdl ) ，确定WebService服务发布成功"></a>(3)浏览器访问地址(这里是 <a href="http://localhost:9001/Service/Function?wsdl" target="_blank" rel="noopener">http://localhost:9001/Service/Function?wsdl</a> ) ，确定WebService服务发布成功</h2><p> WebService服务发布成功的截图：<br><img src="/img/WebService_success.bmp" alt="img"></p>
-<h2 id="4-命令窗口，执行命令，生成相关类"><a href="#4-命令窗口，执行命令，生成相关类" class="headerlink" title="(4)命令窗口，执行命令，生成相关类"></a>(4)命令窗口，执行命令，生成相关类</h2><h3 id="命令提示窗口执行生成命令"><a href="#命令提示窗口执行生成命令" class="headerlink" title="命令提示窗口执行生成命令:"></a>命令提示窗口执行生成命令:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">格式：wsimport -s &lt;src目录&gt; -p &lt;生成类所在包名&gt; -keep &lt;wsdl发布地址&gt;</span><br><span class="line">示例：</span><br><span class="line">wwsimport -s D:\IdeaWork\src -p WebServiceClient.com.jin -keep</span><br><span class="line">http://localhost:9001/Service/Function?wsdl</span><br><span class="line">注意：</span><br><span class="line">   1）&lt;src目录&gt;地址不可含空格</span><br><span class="line">   2）&lt;wsdl发布地址&gt;不要漏了<span class="string">'?wsdl'</span></span><br></pre></td></tr></table></figure>
-<h3 id="命令提示窗口执行命令截图"><a href="#命令提示窗口执行命令截图" class="headerlink" title="命令提示窗口执行命令截图:"></a>命令提示窗口执行命令截图:</h3><p><img src="/img/命令窗口生成相关类.bmp" alt="img"></p>
-<h3 id="执行完命令，生成的包结构截图"><a href="#执行完命令，生成的包结构截图" class="headerlink" title="执行完命令，生成的包结构截图:"></a>执行完命令，生成的包结构截图:</h3><p><img src="/img/执行命令生成的类信息.bmp" alt="img"></p>
-<h2 id="5-编写客户端测试类，调用服务端方法"><a href="#5-编写客户端测试类，调用服务端方法" class="headerlink" title="(5)编写客户端测试类，调用服务端方法"></a>(5)编写客户端测试类，调用服务端方法</h2><h3 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package WebServiceClient.com.jin.test;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import WebServiceClient.com.jin.client.Function;</span><br><span class="line">import WebServiceClient.com.jin.client.FunctionService;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by <span class="variable">$&#123;jinyunlong&#125;</span> on 2016/3/28.</span><br><span class="line"> */</span><br><span class="line">public class TestClient &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //初始化对象</span><br><span class="line">        Function <span class="keyword">function</span> = new FunctionService().getFunctionPort();</span><br><span class="line">        //调用对象中的方法</span><br><span class="line">        String name = function.getName(<span class="string">"jinyunlong"</span>);</span><br><span class="line">        //打印返回结果</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p> <img src="/img/java-designpattern-3.png" alt="img"></p>
+<p>主要优点：<br>1.将具体产品和创建者解耦<br>2.符合单一职责原则<br>3.符合开闭原则</p>
+<h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public class FactoryMethod &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Application application = new Application();</span><br><span class="line">        Product product = application.getObject(<span class="string">"0"</span>);</span><br><span class="line">        product.method1();</span><br><span class="line">        //运行结果：ProductA.method1 executed.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface Product&#123;</span><br><span class="line">    public void method();</span><br><span class="line">&#125;</span><br><span class="line">class ProductA implements Product&#123;</span><br><span class="line">    public void <span class="function"><span class="title">method</span></span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"ProductA.method1 executed."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ProductB implements Product&#123;</span><br><span class="line">    public void <span class="function"><span class="title">method</span></span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"ProductB.method1 executed."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 简单工厂方法（不是一种设计模式，只是一种编程习惯）</span><br><span class="line"> */</span><br><span class="line">class SimpleFactory&#123;</span><br><span class="line">    public static Product createProduct(String <span class="built_in">type</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(type.equals(<span class="string">"0"</span>))&#123;</span><br><span class="line">            <span class="built_in">return</span> new ProductA();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(type.equals(<span class="string">"1"</span>))&#123;</span><br><span class="line">            <span class="built_in">return</span> new ProductB();</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">return</span> null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">abstract class Application&#123;</span><br><span class="line"></span><br><span class="line">    private Product createProduct(String <span class="built_in">type</span>)&#123;</span><br><span class="line">        <span class="built_in">return</span> SimpleFactory.createProduct(<span class="built_in">type</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Product getObject(String <span class="built_in">type</span>)&#123;</span><br><span class="line">        Product product = createProduct(<span class="built_in">type</span>);</span><br><span class="line">        <span class="built_in">return</span> product;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">public class FactoryMethod &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Application application = new ConcreateProductB();</span><br><span class="line">        Product product = application.getObject();</span><br><span class="line">        product.method();</span><br><span class="line">        //运行结果：ProductB.method executed.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface Product&#123;</span><br><span class="line">    public void method();</span><br><span class="line">&#125;</span><br><span class="line">class ProductA implements Product&#123;</span><br><span class="line">    public void <span class="function"><span class="title">method</span></span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"ProductA.method executed."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ProductB implements Product&#123;</span><br><span class="line">    public void <span class="function"><span class="title">method</span></span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"ProductB.method executed."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">abstract class Application&#123;</span><br><span class="line">    //抽象工厂方法</span><br><span class="line">    abstract Product createProduct();</span><br><span class="line"></span><br><span class="line">    Product <span class="function"><span class="title">getObject</span></span>()&#123;</span><br><span class="line">        Product product = createProduct();</span><br><span class="line">        <span class="built_in">return</span> product;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ConcreateProductA extends Application&#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    Product <span class="function"><span class="title">createProduct</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> new ProductA();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ConcreateProductB extends Application&#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    Product <span class="function"><span class="title">createProduct</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> new ProductB();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="源码中的应用"><a href="#源码中的应用" class="headerlink" title="源码中的应用"></a>源码中的应用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">java api（静态工厂方法）</span><br><span class="line"> Calendar.getInstance() </span><br><span class="line"> java.text.NumberFormat.getInstance() </span><br><span class="line"> java.util.ResourceBundle.getBundle() </span><br><span class="line"></span><br><span class="line">工厂方法 </span><br><span class="line"> java.net.URLStreamHandlerFactory </span><br><span class="line"> javax.xml.bind.JAXBContext.createMarshaller</span><br><span class="line"> </span><br><span class="line">Tomcat</span><br><span class="line"> org.apache.catalina.webresources.TomcatURLStreamHandlerFactory</span><br></pre></td></tr></table></figure>
       
 
       
@@ -245,7 +234,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WebService</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -301,7 +294,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/03/WebService/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/06/Java设计模式之工厂模式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +308,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/11/05/从linux到zookeeper/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          从linux到zookeeper
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/03/oracle的那些事/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">oracle的那些事</div>
+    <a href="/2020/04/02/java设计模式之单例模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java设计模式之单例模式</div>
       <i class="icon-circle-right"></i>
     </a>
   
